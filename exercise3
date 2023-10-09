@@ -6,3 +6,132 @@ y = np.array([3,10,12,20])
 plt.scatter(x,y,color='green')
 plt.plot(x,y,color='red',linestyle = "dotted")
 plt.show()
+#2
+x = np.array([12,14,16,18,20,22,24])
+y =np.array([100,200,250,400,300,450,500])
+plt.plot(x,y,color="cyan")
+plt.scatter(x,y,color="purple")
+plt.xlabel("Temperature in Degree Celcius")
+plt.ylabel("Sales")
+plt.show()
+
+#3
+x_values=[]
+y_values=[]
+with open('data.txt','r') as file:
+    for line in file:
+        x,y=map(float,line.split())
+        x_values.append(x)
+        y_values.append(y)
+plt.plot(x_values,y_values,color="purple",linestyle="solid")
+plt.scatter(x_values,y_values,color="red")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.title("Graph")
+plt.show()
+
+#4
+x1=np.array([1,2,3,4,5])
+y1=np.array([2,4,9,16,25])
+x2=np.array([2,4,9,16,25])
+y2=np.array([1,2,3,4,5])
+plt.scatter(x1,y1,color="orange")
+plt.plot(x1,y1,color="blue")
+plt.scatter(x2,y2,color="purple")
+plt.plot(x2,y2,color="pink")
+plt.show()
+
+#5
+x1=np.array([1,2,3,4,5])
+y1=np.array([2,4,9,16,25])
+x2=np.array([2,4,9,16,25])
+y2=np.array([1,2,3,4,5])
+x3=np.array([9,7,10,20])
+y3=np.array([13,7,9,16])
+x4=np.array([10,9,8,7,6,5])
+y4=np.array([1,2,3,4,5,6])
+x5=np.array([1,2,3,4,5,6,7,8,9,10])
+y5=np.array([1,2,3,4,5,6,7,8,9,10])
+plt.scatter(x1,y1,color="orange")
+plt.plot(x1,y1,color="blue")
+plt.scatter(x2,y2,color="purple")
+plt.plot(x2,y2,color="pink")
+plt.scatter(x3,y3,color="violet")
+plt.plot(x3,y3,color="yellow")
+plt.scatter(x4,y4,color="black")
+plt.plot(x4,y4,color="green")
+plt.scatter(x5,y5,color="cyan")
+plt.plot(x5,y5,color="magenta")
+plt.show()
+
+#6
+import matplotlib.pyplot as plt
+x=['Java','Python','PHP','JavaScript','c#','c++']
+y=[22.2,17.6,8.8,8,77,6.7]
+plt.bar(x,y)
+plt.xlabel("Programming Languages")
+plt.ylabel("Popularity")
+plt.show()
+#7
+x=['Java','Python','PHP','JavaScript','c#','c++']
+y=[22.2,17.6,8.8,8,77,6.7]
+plt.barh(x,y,color="red")
+plt.xlabel("Programming Languages")
+plt.ylabel("Popularity")
+plt.show()
+
+#8
+x=['Java','Python','PHP','JavaScript','c#','c++']
+y=[22.2,17.6,8.8,8,77,6.7]
+c=['red','blue','yellow','indigo','purple','green']
+plt.bar(x,y,color=c)
+plt.xlabel("Programming Languages")
+plt.ylabel("Popularity")
+plt.show()
+
+#9
+import numpy as np
+g=['G1','G2','G3','G4','G5']
+men=[22,30,35,35,26]
+women=[25,32,30,35,29]
+width=0.3
+index=np.arange(len(g))
+plt.bar(index,men,width,label='men')
+plt.bar(index+width,women,width,label='women')
+plt.xlabel('person')
+plt.ylabel('scores')
+plt.title('Scores by person')
+plt.xticks(index+width/2,g)
+plt.legend()
+plt.show()
+#10
+x=['Java','Python','PHP','JavaScript','c#','c++']
+y=[22.2,17.6,8.8,8,77,6.7]
+plt.pie(y,labels=x)
+plt.show()
+
+#11
+import pandas as pd
+d=pd.read_csv('medal.csv')
+d=d.sort_values(by='gold_medal',ascending=False)
+top=d.head(5)
+c=top['Country']
+g=top['gold_medal']
+plt.pie(g,labels=c)
+plt.title('2016 Summer olympics')
+plt.show()
+#12
+import matplotlib.pyplot as plt
+import pandas as pd
+math_mark=[88,92,80,89,100,80,60,100,80,34]
+science_mark=[35,79,79,48,100,88,32,45,20,30]
+marks_range=[10,20,30,40,50,60,70,80,90,100]
+plt.scatter(marks_range,math_mark,label='math mark',color='red')
+plt.scatter(marks_range,science_mark,label='science mark',color='green')
+plt.xlabel('marks_range')
+plt.ylabel('marks scored')
+plt.title('scatter plot')
+plt.legend()
+plt.show()
+
+
